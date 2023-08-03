@@ -14,8 +14,13 @@ import {
   const [password, setPassword] = useState('');
   const handleLogin = () => {
     if (name && password) {
-      name == 'UserName' && password === 'Password';
-      navigation.navigate('Dashboard');
+      if(name == 'UserName' && password === 'Password'){
+                navigation.navigate('Dashboard');
+      }else {
+          Alert.alert('Error', 'Something might be wrong please try again!', [
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ]);
+      }
     }
   };
     
